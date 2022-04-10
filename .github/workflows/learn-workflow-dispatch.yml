@@ -1,0 +1,21 @@
+name: Manual Run
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: Name
+        required: true
+        options:
+          - Hoge
+          - Fuga
+          - Poi
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Name
+        run: |
+          echo "Name: ${{ github.event.inputs.name }}"
