@@ -10,3 +10,11 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
+  duplicate_build:
+      name: Same Action
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - uses: ./action-a
+          with:
+            MY_NAME: "Poi"
